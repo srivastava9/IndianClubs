@@ -4,7 +4,8 @@ from .models import Club, State
 
 
 class StateAdmin(admin.ModelAdmin):
-    list_display = ("name",)
+    list_display = ("name", "slug")
+    readonly_fields = ("slug",)
 
 
 admin.site.register(State, StateAdmin)

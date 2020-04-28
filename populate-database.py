@@ -4,6 +4,7 @@ import os
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'IndianClubs.settings')
 
 import django
+#import rest_framework
 django.setup()
 import json
 
