@@ -17,8 +17,8 @@ class State(models.Model):
 
 class Club(models.Model):
     Name = models.CharField(
-        max_length=200, verbose_name="Club Name", unique=True)
-    State = models.OneToOneField(
+        max_length=200, verbose_name="Club Name")
+    State = models.ForeignKey(
         to=State, on_delete=models.CASCADE, related_name="clubs")
     League = models.CharField(
         max_length=200, verbose_name="League Name")

@@ -12,7 +12,7 @@ admin.site.register(State, StateAdmin)
 
 class ClubAdmin(admin.ModelAdmin):
     list_display = ("Name", "League", "State", "City")
-    search_fields = ("State", "City")
+    search_fields = ["Name", "State__name", "City"]
     list_filter = ("State", "League", "City")
 
 
