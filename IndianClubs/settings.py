@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
+import dj_database_url
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -25,7 +26,9 @@ SECRET_KEY = '$jx%esuf39-4vp@nwr7b7aiw#!sjv$ve!$z6j7!r4x8mnlq!g8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "https://indianclubsdjango.herokuapp.com/"
+]
 
 
 # Application definition
@@ -120,3 +123,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+prod_db = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(prod_db)

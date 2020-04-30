@@ -1,0 +1,1 @@
+web: gunicorn IndianClubs.wsgi --log-file -
